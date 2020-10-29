@@ -9,7 +9,7 @@ def test():
     ######################
     ### CUSTOM - START ###
     ######################
-    pass
+    return 'Container is running', 200
     ####################
     ### CUSTOM - END ###
     ####################

@@ -5,4 +5,4 @@ RUN python -m pip install -r requirements.txt
 
 COPY . .
 
-RUN python3 app.py
+ENTRYPOINT python3 app.py
