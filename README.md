@@ -7,7 +7,7 @@ In contrast to pre-computed results, these dockerized systems can deliver more c
 
 ## Development notes
 
-As a starting point we provide a web-service based on [flask](https://palletsprojects.com/p/flask/) in [`app.py`](./app.py) that has to be adapted to the experimenters' systems.
+As a starting point we provide a web-service based on [flask](https://palletsprojects.com/p/flask/) in [`app.py`](./app.py). **The classes in [`systems.py`](./systems.py) need to be adapted**.
 Of course, experimenters are not restricted to use Flask or Python at all as long as the resulting Docker containers implement the required REST endpoints and deliver technically correct responses.
 
 For ranking systems the following endpoint has to be implemented:
