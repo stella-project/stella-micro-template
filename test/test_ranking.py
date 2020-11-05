@@ -22,7 +22,12 @@ class TestApp(unittest.TestCase):
         res = requests.get(url)
         self.assertEqual(res.status_code, 200)
 
-    def test_02_ranking_keys(self):
+    def test_02_indexing(self):
+        url = 'http://' + IP + ':' + PORT + '/index'
+        res = requests.get(url)
+        self.assertEqual(res.status_code, 200)
+
+    def test_03_ranking_keys(self):
         url = 'http://' + IP + ':' + PORT + '/ranking?query=' + query + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         keys = json.loads(res.content).keys()
@@ -32,7 +37,7 @@ class TestApp(unittest.TestCase):
         self.assertTrue('query' in keys)
         self.assertTrue('rpp' in keys)
 
-    def test_03_ranking_key_contents(self):
+    def test_04_ranking_key_contents(self):
         url = 'http://' + IP + ':' + PORT + '/ranking?query=' + query + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
@@ -40,13 +45,13 @@ class TestApp(unittest.TestCase):
         self.assertEqual(content.get('rpp'), rpp)
         self.assertEqual(content.get('query'), query)
 
-    def test_04_ranking_not_empty(self):
+    def test_05_ranking_not_empty(self):
         url = 'http://' + IP + ':' + PORT + '/ranking?query=' + query + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
         self.assertGreater(len(content.get('itemlist')), 0)
 
-    def test_05_ranking_length(self):
+    def test_06_ranking_length(self):
         url = 'http://' + IP + ':' + PORT + '/ranking?query=' + query + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
