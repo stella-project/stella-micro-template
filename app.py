@@ -1,29 +1,22 @@
 from flask import Flask, request, jsonify
+from systems import Ranker, Recommender
 
 
 app = Flask(__name__)
+ranker = Ranker()
+recommender = Recommender()
 
 
 @app.route('/test', methods=["GET"])
 def test():
-    ######################
-    ### CUSTOM - START ###
-    ######################
     return 'Container is running', 200
-    ####################
-    ### CUSTOM - END ###
-    ####################
 
 
 @app.route('/index', methods=["GET"])
 def index():
-    ######################
-    ### CUSTOM - START ###
-    ######################
-    pass
-    ####################
-    ### CUSTOM - END ###
-    ####################
+    ranker.index()
+    recommender.index()
+    return 'Indexing done!', 200
 
 
 @app.route('/ranking', methods=["GET"])
@@ -31,22 +24,7 @@ def ranking():
     query = request.args.get('query', None)
     page = request.args.get('page', default=0, type=int)
     rpp = request.args.get('rpp', default=20, type=int)
-
-    response = {}
-    response['page'] = page
-    response['rpp'] = rpp
-    response['query'] = query
-    response['num_found'] = 0
-    response['itemlist'] = []
-
-    ######################
-    ### CUSTOM - START ###
-    ######################
-    pass
-    ####################
-    ### CUSTOM - END ###
-    ####################
-
+    response = ranker.rank_publications(query, page, rpp)
     return jsonify(response)
 
 
@@ -55,43 +33,16 @@ def rec_data():
     item_id = request.args.get('item_id', None)
     page = request.args.get('page', default=0, type=int)
     rpp = request.args.get('rpp', default=20, type=int)
-
-    response = {}
-    response['page'] = page
-    response['rpp'] = rpp
-    response['item_id'] = item_id
-    response['num_found'] = 0
-    response['itemlist'] = []
-    ######################
-    ### CUSTOM - START ###
-    ######################
-    pass
-    ####################
-    ### CUSTOM - END ###
-    ####################
-
+    response = recommender.recommend_datasets(item_id, page, rpp)
     return jsonify(response)
+
 
 @app.route('/recommendation/publications', methods=["GET"])
 def rec_pub():
     item_id = request.args.get('item_id', None)
     page = request.args.get('page', default=0, type=int)
     rpp = request.args.get('rpp', default=20, type=int)
-
-    response = {}
-    response['page'] = page
-    response['rpp'] = rpp
-    response['item_id'] = item_id
-    response['num_found'] = 0
-    response['itemlist'] = []
-    ######################
-    ### CUSTOM - START ###
-    ######################
-    pass
-    ####################
-    ### CUSTOM - END ###
-    ####################
-
+    response = recommender.recommend_publications(item_id, page, rpp)
     return jsonify(response)
 
 
