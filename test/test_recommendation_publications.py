@@ -49,7 +49,7 @@ class TestApp(unittest.TestCase):
         content = json.loads(res.content)
         self.assertGreater(len(content.get('itemlist')), 0)
 
-    def test_06_ranking_length(self):
+    def test_06_recommendation_length(self):
         url = 'http://' + IP + ':' + PORT + '/recommendation/publications?item_id=' + item_id + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
