@@ -43,7 +43,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(content.get('rpp'), rpp)
         self.assertEqual(content.get('item_id'), item_id)
 
-    def test_05_ranking_not_empty(self):
+    def test_05_recommendation_not_empty(self):
         url = 'http://' + IP + ':' + PORT + '/recommendation/datasets?item_id=' + item_id + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
