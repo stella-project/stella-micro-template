@@ -55,7 +55,7 @@ class TestApp(unittest.TestCase):
         url = 'http://' + IP + ':' + PORT + '/ranking?query=' + query + '&page=' + str(page) + '&rpp=' + str(rpp)
         res = requests.get(url)
         content = json.loads(res.content)
-        self.assertEqual(len(content.get('itemlist')), rpp)
+        self.assertEqual(len(content.get('itemlist')), content.get('num_found'))
 
 
 if __name__ == '__main__':
