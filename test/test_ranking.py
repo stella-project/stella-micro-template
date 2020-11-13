@@ -9,7 +9,7 @@ img_tag = 'test-img'
 container_name = 'test-container'
 client = docker.from_env(timeout=86400)
 query = 'vaccine'
-page = 1
+page = 0
 rpp = 10
 
 
