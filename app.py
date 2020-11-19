@@ -1,10 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from systems import Ranker, Recommender
 
 
 app = Flask(__name__)
 ranker = Ranker()
 recommender = Recommender()
+
+
+@app.route('/')
+def redirect_to_test():
+    return redirect("/test", code=302)
 
 
 @app.route('/test', methods=["GET"])
