@@ -5,10 +5,20 @@ Currently, the infrastructure supports two different types of submission.
 Experimenters can choose to submit pre-computed runs with TREC run file syntax *OR* use this repository in order to integrate their system as a micro-service into the [STELLA App](https://github.com/stella-project/stella-app).
 In contrast to pre-computed results, these dockerized systems can deliver more comprehensive search result since they are not limited to pre-selected queries or items.
 
+![](https://stella-project.org/images/STELLA_participate_ani.gif)
+
 ## Development notes
 
 As a starting point we provide a web-service based on [flask](https://palletsprojects.com/p/flask/) in [`app.py`](./app.py). **The classes in [`systems.py`](./systems.py) need to be adapted**.
 Of course, experimenters are not restricted to use Flask or Python at all as long as the resulting Docker containers implement the required REST endpoints and deliver technically correct responses.
+
+We provide tutorials in the form of setup guides, notebooks, and videos:
+
+- :memo: [Setup guide: Implementing a ranking service](./doc/rank/README.md)
+- :notebook: [Notebook: Implementing a recommendation service](./doc/rec/README.md)
+- :movie_camera: [Video: Implementing a recommendation service](https://drive.google.com/file/d/1_Zuw7cxeVP-vDoLUknm96nJI28AP-tnR/view)
+
+## REST endpoints
 
 For ranking systems the following endpoint has to be implemented:
 
