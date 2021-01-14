@@ -1,11 +1,25 @@
+<!--- ![LOGO](https://github.com/stella-project/Participand_Recommendation/blob/main/img/logo-st.JPG) --->
+![LOGO](https://avatars1.githubusercontent.com/u/47419314?s=200&v=4)
+
+
+<b>STELLA - Infrastructures for Living Labs </b><br>
+https://stella-project.org/ 
+
+
 # How to integrate a ranking microservice into STELLA
 
 ## 1. Introduction
 
-This tutorial will guide you step-by-step through the process of integrating a ranking microservice into STELLA-infrastructure.
+The STELLA-framework enables participants to run and evaluate ranking and recommendation-systems in a Living-Lab scenario. The heart of STELLA-framework is the STELLA application, which is implemented as a a multi-container-application (MCA) by the sites (the search-engines) and handles communication between the site and participant-containers. This means every participant-system must be deployed as a docker image, which runs as a container inside STELLA application. In principle you have full freedom in choice of programming language and software tools. Your container only has to satisfy the constraints of a predefined REST-API. If you want to learn more about STELLA, please [see our blog posts](https://stella-project.org/blog/). This tutorial will guide you step-by-step through the process of integrating a ranking microservice into STELLA-infrastructure.
 You will learn how to build your own dockerized ranking-system with python.
 For this purpose we will use a document subset from the LIVIVO search engine.
 To give you a head start, we prepared a code template. That means, you just have to write a few lines of code to get your ranking-system running.
+
+## 2. Prerequisites 
+
+Before starting this tutorial, make sure all requirements in the [README.md]() are fulfilled.
+
+<!---
 
 ## 2. Requirements
 You will need the following software installed on your system to build your own ranking-system:
@@ -21,7 +35,9 @@ Hint: Don't forget to add your user to the docker group
 The STELLA-framework enables participants to run and evaluate ranking and recommendation-systems in a Living-Lab scenario. The heart of STELLA-framework is the STELLA application, which is implemented as a a multi-container-application (MCA) by the sites (the search-engines) and handles communication between the site and participant-containers. This means every participant-system must be deployed as a docker image, which runs as a container inside STELLA application. In principle you have full freedom in choice of programming language and software tools. Your container only has to satisfy the constraints of a predefined REST-API.
 In this tutorial we will create a ranker with python and we will use a code template with predefined REST-endpoints. If you want to learn more about STELLA, please [see our blog posts](https://stella-project.org/blog/).
 
-## 4. LIVIVO Dataset
+--->
+
+## 3. LIVIVO Dataset
 
 LIVIVO is an interdisciplinary search engine for literature and information in the field of life sciences. It is run by ZB MED – Information Centre for Life Sciences. LIVIVO draws on relevant scientific information from the ZB MED subject areas of medicine, health, nutrition, and environmental and agricultural sciences. (https://www.livivo.de/app/misc/help/about)  
 In this tutorial we will work with a small subset of LIVIVO (30000 documents). See the following table for an explanation of fields.
@@ -57,7 +73,7 @@ In this tutorial we will work with a small subset of LIVIVO (30000 documents). S
 The dataset is provided in jsonlines-format.
 Download the LIVIVO-testset here: https://th-koeln.sciebo.de/s/OBm0NLEwz1RYl9N/download?path=%2Flivivo%2Fdocuments&files=livivo_testset.jsonl
 
-## 5. Forking and cloning STELLA-microservice Template
+## 4. Forking and cloning STELLA-microservice Template
 
 Before you start working on your own ranking-system, you should fork our template.  
 Navigate with your browser to our template repository https://github.com/stella-project/stella-micro-template and click the "fork"-button on the top right. This will create a fork in your personal github-account. 
@@ -67,7 +83,7 @@ Now navigate to your working directory and run the following command to clone th
 $ git clone https://github.com/your-username/stella-micro-template.git
 ```
 
-## 6. Adding dataset to your local environment
+## 5. Adding dataset to your local environment
 
 Please download the LIVIVO-testset here: https://th-koeln.sciebo.de/s/OBm0NLEwz1RYl9N/download?path=%2Flivivo%2Fdocuments&files=livivo_testset.jsonl  
 Place the file into stella-micro-template/data/livivo/datasets. If these subfolders do not exist, create them.
@@ -81,7 +97,7 @@ Place the file into stella-micro-template/data/livivo/datasets. If these subfold
 ```
 
 
-## 7. REST-Endpoints with Flask
+## 6. REST-Endpoints with Flask
 
 To connect your system with STELLA, your container has to provide REST-endpoints according to the STELLA-interface.
 Your system should provide three endpoints.  
@@ -345,7 +361,7 @@ Your browser will reply with a JSON-Document, that look like to this (itemlist w
 
 Congratulations! Your ranker is running! We can now start to build a dockerized version and run unit-tests!
 
-## 10. Build docker-contaner and run unit-tests
+## 11. Build docker-contaner and run unit-tests
 
 You are now ready to build your ranker as a docker-container and run unit-tests to check if everything is working as expected, before pushing your code back to github.
 
@@ -379,20 +395,20 @@ This will run 6 different tests, which your container has to pass, before it can
 The Script should print the message "OK". If you are using Windows, make sure you target 'localhost' rather than '0.0.0.0' on the IP variable in the test (i.e. ```IP = 'localhost'``` for Windows; for other OS ```IP = '0.0.0.0.``` should work).
 
 
-## 11. push your changes to github
+## 12. push your changes to github
 
 Now you are ready to push your ranker back to github.
 
 Add the changed files to the the staging area.
 
 ``` shell
-git add systems.py requirements.py
+git add systems.py requirements.txt
 ```
 
 Save the changes to you local repository.
 
 ``` shell
-git commit -m
+git commit -m "add systems and requirements"
 ```
 
 Update remote branch with local commit.
