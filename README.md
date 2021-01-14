@@ -12,11 +12,14 @@ In contrast to pre-computed results, these dockerized systems can deliver more c
 As a starting point we provide a web-service based on [flask](https://palletsprojects.com/p/flask/) in [`app.py`](./app.py). **The classes in [`systems.py`](./systems.py) need to be adapted**.
 Of course, experimenters are not restricted to use Flask or Python at all as long as the resulting Docker containers implement the required REST endpoints and deliver technically correct responses.
 
-We provide tutorials in the form of setup guides, notebooks, and videos:
+We provide tutorials in the form of setup guides and videos. For starters, following one of the provided resources should be enough.
 
-- :memo: [Setup guide: Implementing a ranking service](./doc/rank/README.md)
-- :notebook: [Notebook: Implementing a recommendation service](./doc/rec/README.md)
-- :movie_camera: [Video: Implementing a recommendation service](https://drive.google.com/file/d/1_Zuw7cxeVP-vDoLUknm96nJI28AP-tnR/view)
+#### Implementing a ranking service
+- :memo: [Setup guide of ranking systems](./doc/rank/README.md)
+
+#### Implementing a recommendation service
+- :memo: [Setup guide of recommender systems](./doc/rec/README.md)
+- :movie_camera: [Video guide of recommender systems](https://drive.google.com/file/d/1_Zuw7cxeVP-vDoLUknm96nJI28AP-tnR/view)
 
 ## REST endpoints
 
