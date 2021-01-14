@@ -1,4 +1,6 @@
-![LOGO](https://github.com/stella-project/Participand_Recommendation/blob/main/img/logo-st.JPG)
+<!--- ![LOGO](https://github.com/stella-project/Participand_Recommendation/blob/main/img/logo-st.JPG) --->
+![LOGO](https://avatars1.githubusercontent.com/u/47419314?s=200&v=4)
+
 
 <b>STELLA - Infrastructures for Living Labs </b><br>
 https://stella-project.org/ 
@@ -8,20 +10,25 @@ https://stella-project.org/
 Steps to implement a dockerize application for participating in Living Lab for evaluating your REC systems in a live environment of gesis search which is a search engine for finding information about social science research data and open access publications. 
 
 
-![spb](https://github.com/stella-project/Participand_Recommendation/blob/main/img/patrick.jpg)
+<!--- ![spb](https://github.com/stella-project/Participand_Recommendation/blob/main/img/patrick.jpg) --->
 
 ## Table of Contents
 
 <div class="alert alert-block alert-info" style="margin-top: 20px">
 
-0.  [prerequisite](#10)<br> 
+0.  [Prerequisites](#10)<br> 
 1.  [Data](#0)<br>
 2.  [Implementing Ranking Algorithm](#1)<br>
 3.  [Implementing Dockerize Flask App](#2)<br>
-4.  [Next Steps](#4)<br>
+4.  [Next Steps](#3)<br>
     </div>
     <hr>
 
+## 0. Prerequisites <a id="10"></a>
+
+Before starting this tutorial, make sure all requirements in the [README.md]() are fulfilled.
+
+<!---
 # Prerequisite <a id="10"></a>
 -  Git
 -  Install Docker
@@ -49,6 +56,7 @@ git clone https://github.com/stella-project/gesis_rec_micro.git
 - [PyCharm IDE](https://www.jetbrains.com/de-de/pycharm/)
 - [Get Docker](https://docs.docker.com/get-docker/)
 
+--->
 
 <hr>
 
@@ -303,7 +311,7 @@ datasetdf.head(3)
 
 <hr>
 
-# 2. Implementing Ranking Algorithm <a id="1"></a>
+# 2. Implementing the Recommendation Algorithm <a id="1"></a>
 
 In the following we implement a simple app to create randomize recommendation for every publication. You will find out how simple it is.
 
@@ -504,7 +512,7 @@ COPY . .
 ENTRYPOINT python3 app.py
 ```
 
-## Running the App (RecRand)
+## Running the App
 
 ```bash
 $ cd gesis_rec_micro
