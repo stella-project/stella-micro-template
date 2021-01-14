@@ -21,6 +21,16 @@ We provide tutorials in the form of setup guides and videos. For starters, follo
 - :memo: [Setup guide of recommender systems](./doc/rec/README.md)
 - :movie_camera: [Video guide of recommender systems](https://drive.google.com/file/d/1_Zuw7cxeVP-vDoLUknm96nJI28AP-tnR/view)
 
+#### Requirements
+
+Before starting your implementations, some requirements have to be fullfiled:
+
+* docker: [get-started](https://docs.docker.com/get-started/) | [get docker](https://docs.docker.com/get-docker/)
+* [git](https://github.com/git-guides/install-git)
+* [python3](https://wiki.python.org/moin/BeginnersGuide/Download)
+
+Besides a Python distribution like [Anaconda](https://www.anaconda.com/) and an IDE like [PyCharm](https://www.jetbrains.com/de-de/pycharm/) can be helpful.
+
 ## REST endpoints
 
 For ranking systems the following endpoint has to be implemented:
