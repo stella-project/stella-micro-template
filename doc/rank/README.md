@@ -17,7 +17,7 @@ To give you a head start, we prepared a code template. That means, you just have
 
 ## 2. Prerequisites 
 
-Before starting this tutorial, make sure all requirements in the [README.md]() are fulfilled.
+Before starting this tutorial, make sure all requirements in the [README.md](https://github.com/stella-project/stella-micro-template/blob/master/README.md#requirements) are fulfilled.
 
 <!---
 
