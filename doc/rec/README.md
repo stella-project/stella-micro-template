@@ -26,7 +26,7 @@ Steps to implement a dockerize application for participating in Living Lab for e
 
 ## 0. Prerequisites <a id="10"></a>
 
-Before starting this tutorial, make sure all requirements in the [README.md]() are fulfilled.
+Before starting this tutorial, make sure all requirements in the [README.md](https://github.com/stella-project/stella-micro-template/blob/master/README.md#requirements) are fulfilled.
 
 <!---
 # Prerequisite <a id="10"></a>
