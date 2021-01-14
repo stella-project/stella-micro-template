@@ -1,2 +1,5 @@
 .idea/
 __pycache__/
+data/gesis-search/*
+data/livivo/*
+venv/*
