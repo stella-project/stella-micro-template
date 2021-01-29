@@ -19,7 +19,7 @@ We provide tutorials in the form of setup guides and videos. For starters, follo
 
 #### Implementing a recommendation service
 - :memo: [Setup guide of recommender systems](./doc/rec/README.md)
-- :movie_camera: [Video guide of recommender systems](https://drive.google.com/file/d/1_Zuw7cxeVP-vDoLUknm96nJI28AP-tnR/view)
+- :movie_camera: [Video guide of recommender systems](https://drive.google.com/file/d/15pR_xjrDfms32Yi4U6FnTd2aE8Rhmxyn/view)
 
 #### Requirements
 
