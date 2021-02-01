@@ -29,7 +29,7 @@ Before starting your implementations, some requirements have to be fullfiled:
 * [git](https://github.com/git-guides/install-git)
 * [python3](https://wiki.python.org/moin/BeginnersGuide/Download)
 
-Besides a Python distribution like [Anaconda](https://www.anaconda.com/) and an IDE like [PyCharm](https://www.jetbrains.com/de-de/pycharm/) can be helpful.
+Besides a Python distribution like [Anaconda](https://www.anaconda.com/) and an IDE like [PyCharm](https://www.jetbrains.com/de-de/pycharm/) can be helpful. Likewise, you should be familiar with [virtual environments](https://docs.python.org/3/tutorial/venv.html).
 
 ## REST endpoints
 
@@ -44,6 +44,15 @@ For recommending datasets this endpoint has to be implemented:
 For recommending publications this endpoint has to be implemented:
 
 **GET** `container_name/recommendation/publications?itemid=<string:itemidstr>&page=<int:pnum>&rpp=<int:rppnum>`
+
+Whereas the parameters contain the following information:
+
+| Parameter | Explanation |
+| --- | --- |
+| query | String-formatted query corresponding to the ranking |
+| itemid | Identifier of the target item corresponding to the recommendation |
+| page | Number of page |
+| rpp | Number of **r**esults **p**er **p**age |
 
 **Requirements:** The submitted system has run in a single Docker container and this repository should be self-contained. As a starting point, please have a look at the [Dockerfile](./Dockerfile). 
 
@@ -60,4 +69,11 @@ Recommendation systems are going to be deployed at GESIS, whereas ranking system
 
 ## Register
 
-In order to get access and submit systems, experimenters have to [register](https://stella-project.org/). More information on the procedure will follow soon.
+In order to get access and submit systems, experimenters have to [register here](https://lilas.stella-project.org/). As soon as you have registered, you can submit your system by adding a link to your GitHub repository. After approval your system is ready to be integrated into the [STELLA App](https://github.com/stella-project/stella-app).
+
+## FAQ & Known Issues
+
+As far as we know, the development process works fine within a UNIX environment. However we received the following feedback from Windows users:
+
+- Instead of using the address `0.0.0.0`, it should be `localhost` when starting flask.
+- For some Windows users the [`docker-sdk`](https://docker-py.readthedocs.io/en/stable/) did not work at the first try and a reinstallation of [Anaconda](https://www.anaconda.com/) could solve the issue.
