@@ -11,11 +11,11 @@ class Ranker(object):
         itemlist = []
 
         return {
-            'page': page,
-            'rpp': rpp,
-            'query': query,
-            'itemlist': itemlist,
-            'num_found': len(itemlist)
+            "page": page,
+            "rpp": rpp,
+            "query": query,
+            "itemlist": itemlist,
+            "num_found": len(itemlist),
         }
 
 
@@ -32,11 +32,11 @@ class Recommender(object):
         itemlist = []
 
         return {
-            'page': page,
-            'rpp': rpp,
-            'item_id': item_id,
-            'itemlist': itemlist,
-            'num_found': len(itemlist)
+            "page": page,
+            "rpp": rpp,
+            "item_id": item_id,
+            "itemlist": itemlist,
+            "num_found": len(itemlist),
         }
 
     def recommend_publications(self, item_id, page, rpp):
@@ -44,9 +44,9 @@ class Recommender(object):
         itemlist = []
 
         return {
-            'page': page,
-            'rpp': rpp,
-            'item_id': item_id,
-            'itemlist': itemlist,
-            'num_found': len(itemlist)
+            "page": page,
+            "rpp": rpp,
+            "item_id": item_id,
+            "itemlist": itemlist,
+            "num_found": len(itemlist),
         }
